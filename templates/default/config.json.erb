@@ -15,23 +15,31 @@
         "EnableDeveloper": <%= node['mattermost']['app']['EnableDeveloper'] %>,
         "EnableSecurityFixAlert": <%= node['mattermost']['app']['EnableSecurityFixAlert'] %>,
         "EnableInsecureOutgoingConnections": <%= node['mattermost']['app']['EnableInsecureOutgoingConnections'] %>,
+        "EnableMultifactorAuthentication": <%= node['mattermost']['app']['EnableMultifactorAuthentication'] %>,
+        "AllowCorsFrom": "<%= node['mattermost']['app']['AllowCorsFrom'] %>",
         "SessionLengthWebInDays": <%= node['mattermost']['app']['SessionLengthWebInDays'] %>,
         "SessionLengthMobileInDays": <%= node['mattermost']['app']['SessionLengthMobileInDays'] %>,
         "SessionLengthSSOInDays": <%= node['mattermost']['app']['SessionLengthSSOInDays'] %>,
-        "SessionCacheInMinutes": <%= node['mattermost']['app']['SessionCacheInMinutes'] %>
+        "SessionCacheInMinutes": <%= node['mattermost']['app']['SessionCacheInMinutes'] %>,
+        "WebsocketSecurePort": <%= node['mattermost']['app']['WebsocketSecurePort'] %>,
+        "WebsocketPort": <%= node['mattermost']['app']['WebsocketPort'] %>,
+        "WebserverMode": "<%= node['mattermost']['app']['WebserverMode'] %>"
     },
     "TeamSettings": {
         "SiteName": "<%= node['mattermost']['app']['SiteName'] %>",
         "MaxUsersPerTeam": <%= node['mattermost']['app']['MaxUsersPerTeam'] %>,
         "EnableTeamCreation": <%= node['mattermost']['app']['EnableTeamCreation'] %>,
         "EnableUserCreation": <%= node['mattermost']['app']['EnableUserCreation'] %>,
+        "EnableOpenServer": <%= node['mattermost']['app']['EnableOpenServer'] %>,
         "RestrictCreationToDomains": "<%= node['mattermost']['app']['RestrictCreationToDomains'] %>",
         "RestrictTeamNames": <%= node['mattermost']['app']['RestrictTeamNames'] %>,
-        "EnableTeamListing": <%= node['mattermost']['app']['EnableTeamListing'] %>
+        "EnableCustomBrand": <%= node['mattermost']['app']['EnableCustomBrand'] %>,
+        "CustomBrandText": "<%= node['mattermost']['app']['CustomBrandText'] %>",
+        "RestrictDirectMessage": "<%= node['mattermost']['app']['RestrictDirectMessage'] %>"
     },
     "SqlSettings": {
         "DriverName": "<%= node['mattermost']['app']['DriverName'] %>",
-        "DataSource": "<%= node['mattermost']['database']['username'] %>:<%= node['mattermost']['database']['password'] %>@tcp(<%= node['mattermost']['database']['hostname'] %>:<%= node['mattermost']['database']['port'] %>)/<%= node['mattermost']['database']['database_name'] %>?charset=utf8mb4,utf8",
+        "DataSource": "<%= node['mattermost']['database']['postgresql']['datasource'] %>",
         "DataSourceReplicas": <%= node['mattermost']['app']['DataSourceReplicas'] %>,
         "MaxIdleConns": <%= node['mattermost']['app']['MaxIdleConns'] %>,
         "MaxOpenConns": <%= node['mattermost']['app']['MaxOpenConns'] %>,
@@ -83,7 +91,8 @@
         "InviteSalt": "<%= node['mattermost']['app']['InviteSalt'] %>",
         "PasswordResetSalt": "<%= node['mattermost']['app']['PasswordResetSalt'] %>",
         "SendPushNotifications": <%= node['mattermost']['app']['SendPushNotifications'] %>,
-        "PushNotificationServer": "<%= node['mattermost']['app']['PushNotificationServer'] %>"
+        "PushNotificationServer": "<%= node['mattermost']['app']['PushNotificationServer'] %>",
+        "PushNotificationContents": "<%= node['mattermost']['app']['PushNotificationContents'] %>"
     },
     "RateLimitSettings": {
         "EnableRateLimiter": <%= node['mattermost']['app']['EnableRateLimiter'] %>,
@@ -112,5 +121,38 @@
         "AuthEndpoint": "<%= node['mattermost']['app']['AuthEndpoint'] %>",
         "TokenEndpoint": "<%= node['mattermost']['app']['TokenEndpoint'] %>",
         "UserApiEndpoint": "<%= node['mattermost']['app']['UserApiEndpoint'] %>"
+    },
+    "GoogleSettings": {
+        "Enable": <%= node['mattermost']['app']['Google']['Enable'] %>,
+        "Secret": "<%= node['mattermost']['app']['Google']['Secret'] %>",
+        "Id": "<%= node['mattermost']['app']['Google']['Id'] %>",
+        "Scope": "<%= node['mattermost']['app']['Google']['Scope'] %>",
+        "AuthEndpoint": "<%= node['mattermost']['app']['Google']['AuthEndpoint'] %>",
+        "TokenEndpoint": "<%= node['mattermost']['app']['Google']['TokenEndpoint'] %>",
+        "UserApiEndpoint": "<%= node['mattermost']['app']['Google']['UserApiEndpoint'] %>"
+    },
+    "LdapSettings": {
+        "Enable": <%= node['mattermost']['app']['Ldap']['Enable'] %>,
+        "LdapServer": "<%= node['mattermost']['app']['Ldap']['LdapServer'] %>",
+        "LdapPort": <%= node['mattermost']['app']['Ldap']['LdapPort'] %>,
+        "ConnectionSecurity": "<%= node['mattermost']['app']['Ldap']['ConnectionSecurity'] %>",
+        "BaseDN": "<%= node['mattermost']['app']['Ldap']['BaseDN'] %>",
+        "BindUsername": "<%= node['mattermost']['app']['Ldap']['BindUsername'] %>",
+        "BindPassword": "<%= node['mattermost']['app']['Ldap']['BindPassword'] %>",
+        "UserFilter": "<%= node['mattermost']['app']['Ldap']['UserFilter'] %>",
+        "FirstNameAttribute": "<%= node['mattermost']['app']['Ldap']['FirstNameAttribute'] %>",
+        "LastNameAtrribute": "<%= node['mattermost']['app']['Ldap']['LastNameAttribute'] %>",
+        "EmailAttribute": "<%= node['mattermost']['app']['Ldap']['EmailAttribute'] %>",
+        "UsernameAttribute": "<%= node['mattermost']['app']['Ldap']['UsernameAttribute'] %>",
+        "NicknameAttribute": "<%= node['mattermost']['app']['Ldap']['NicknameAttribute'] %>",
+        "IdAttribute": "<%= node['mattermost']['app']['Ldap']['IdAttribute'] %>",
+        "SkipCertificateVerification": <%= node['mattermost']['app']['Ldap']['SkipCertificateVerification'] %>,
+        "QueryTimeout": <%= node['mattermost']['app']['Ldap']['QueryTimeout'] %>,
+        "LoginFieldName": "<%= node['mattermost']['app']['Ldap']['LoginFieldName'] %>"
+    },
+    "ComplianceSettings": {
+        "Enable": <%= node['mattermost']['app']['Compliance']['Enable'] %>,
+        "Directory": "<%= node['mattermost']['app']['Compliance']['Directory'] %>",
+        "EnableDaily": <%= node['mattermost']['app']['Compliance']['EnableDaily'] %>
     }
 }

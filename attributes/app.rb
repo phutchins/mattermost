@@ -14,19 +14,27 @@ default['mattermost']['app']['EnableTesting'] = false
 default['mattermost']['app']['EnableDeveloper'] = false
 default['mattermost']['app']['EnableSecurityFixAlert'] = true
 default['mattermost']['app']['EnableInsecureOutgoingConnections'] = false
+default['mattermost']['app']['EnableMultifactorAuthentication'] = false
+default['mattermost']['app']['AllowCorsFrom'] = ""
 default['mattermost']['app']['SessionLengthWebInDays'] = 30
 default['mattermost']['app']['SessionLengthMobileInDays'] = 30
 default['mattermost']['app']['SessionLengthSSOInDays'] = 30
 default['mattermost']['app']['SessionCacheInMinutes'] = 10
+default['mattermost']['app']['WebsocketSecurePort'] = 443
+default['mattermost']['app']['WebsocketPort'] = 80
+default['mattermost']['app']['WebserverMode'] = "regular"
 
 # TeamSettings
 default['mattermost']['app']['SiteName'] = "Mattermost"
 default['mattermost']['app']['MaxUsersPerTeam'] = 50
 default['mattermost']['app']['EnableTeamCreation'] = true
 default['mattermost']['app']['EnableUserCreation'] = true
+default['mattermost']['app']['EnableOpenServer'] = false
 default['mattermost']['app']['RestrictCreationToDomains'] = ""
 default['mattermost']['app']['RestrictTeamNames'] = true
-default['mattermost']['app']['EnableTeamListing'] = false
+default['mattermost']['app']['EnableCustomBrand'] = false
+default['mattermost']['app']['CustomBrandText'] = ""
+default['mattermost']['app']['RestrictDirectMessage'] = "any"
 
 # SQL Settings
 default['mattermost']['app']['DriverName'] = "mysql"
@@ -65,7 +73,7 @@ default['mattermost']['app']['AmazonS3BucketEndpoint'] = ""
 default['mattermost']['app']['AmazonS3LocationConstraint'] = false
 default['mattermost']['app']['AmazonS3LowercaseBucket'] = false
 
-#EmailSettings
+# EmailSettings
 default['mattermost']['app']['EnableSignUpWithEmail'] = true
 default['mattermost']['app']['EnableSignInWithEmail'] = true
 default['mattermost']['app']['EnableSignInWithUsername'] = false
@@ -82,6 +90,7 @@ default['mattermost']['app']['InviteSalt'] = "bjlSR4QqkXFBr7TP4oDzlfZmcNuH9YoS"
 default['mattermost']['app']['PasswordResetSalt'] = "vZ4DcKyVVRlKHHJpexcuXzojkE5PZ5eL"
 default['mattermost']['app']['SendPushNotifications'] = false
 default['mattermost']['app']['PushNotificationServer'] = ""
+default['mattermost']['app']['PushNotificationContents'] = "generic"
 
 # RateLimitSettings
 default['mattermost']['app']['EnableRateLimiter'] = true
@@ -94,7 +103,7 @@ default['mattermost']['app']['VaryByHeader'] = ""
 default['mattermost']['app']['ShowEmailAddress'] = true
 default['mattermost']['app']['ShowFullName'] = true
 
-#SupportSettings
+# SupportSettings
 default['mattermost']['app']['TermsOfServiceLink'] = "/static/help/terms.html"
 default['mattermost']['app']['PrivacyPolicyLink'] = "/static/help/privacy.html"
 default['mattermost']['app']['AboutLink'] = "/static/help/about.html"
@@ -110,3 +119,36 @@ default['mattermost']['app']['Scope'] = ""
 default['mattermost']['app']['AuthEndpoint'] = ""
 default['mattermost']['app']['TokenEndpoint'] = ""
 default['mattermost']['app']['UserApiEndpoint'] = ""
+
+# GoogleSettings
+default['mattermost']['app']['Google']['Enable'] = false
+default['mattermost']['app']['Google']['Secret'] = false
+default['mattermost']['app']['Google']['Id'] = false
+default['mattermost']['app']['Google']['Scope'] = false
+default['mattermost']['app']['Google']['AuthEndpoint'] = false
+default['mattermost']['app']['Google']['TokenEndpoint'] = false
+default['mattermost']['app']['Google']['UserApiEndpoint'] = false
+
+# LdapSettings
+default['mattermost']['app']['Ldap']['Enable'] = false
+default['mattermost']['app']['Ldap']['LdapServer'] = false
+default['mattermost']['app']['Ldap']['LdapPort'] = false
+default['mattermost']['app']['Ldap']['ConnectionSecurity'] = false
+default['mattermost']['app']['Ldap']['BaseDN'] = false
+default['mattermost']['app']['Ldap']['BindUsername'] = false
+default['mattermost']['app']['Ldap']['BindPassword'] = false
+default['mattermost']['app']['Ldap']['UserFilter'] = false
+default['mattermost']['app']['Ldap']['FirstNameAttribute'] = false
+default['mattermost']['app']['Ldap']['LastNameAttribute'] = false
+default['mattermost']['app']['Ldap']['EmailAttribute'] = false
+default['mattermost']['app']['Ldap']['UsernameAttribute'] = false
+default['mattermost']['app']['Ldap']['NicknameAttribute'] = false
+default['mattermost']['app']['Ldap']['IdAttribute'] = false
+default['mattermost']['app']['Ldap']['SkipCertificateVerification'] = false
+default['mattermost']['app']['Ldap']['QueryTimeout'] = false
+default['mattermost']['app']['Ldap']['LoginFieldName'] = false
+
+# ComplianceSettings
+default['mattermost']['app']['Compliance']['Enable'] = false
+default['mattermost']['app']['Compliance']['Directory'] = "./data/"
+default['mattermost']['app']['Compliance']['EnableDaily'] = false
