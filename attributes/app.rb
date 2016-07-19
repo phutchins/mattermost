@@ -131,22 +131,22 @@ default['mattermost']['app']['Google']['UserApiEndpoint'] = false
 
 # LdapSettings
 default['mattermost']['app']['Ldap']['Enable'] = false
-default['mattermost']['app']['Ldap']['LdapServer'] = false
-default['mattermost']['app']['Ldap']['LdapPort'] = false
-default['mattermost']['app']['Ldap']['ConnectionSecurity'] = false
-default['mattermost']['app']['Ldap']['BaseDN'] = false
-default['mattermost']['app']['Ldap']['BindUsername'] = false
-default['mattermost']['app']['Ldap']['BindPassword'] = false
-default['mattermost']['app']['Ldap']['UserFilter'] = false
-default['mattermost']['app']['Ldap']['FirstNameAttribute'] = false
-default['mattermost']['app']['Ldap']['LastNameAttribute'] = false
-default['mattermost']['app']['Ldap']['EmailAttribute'] = false
-default['mattermost']['app']['Ldap']['UsernameAttribute'] = false
-default['mattermost']['app']['Ldap']['NicknameAttribute'] = false
-default['mattermost']['app']['Ldap']['IdAttribute'] = false
+default['mattermost']['app']['Ldap']['LdapServer'] = ""
+default['mattermost']['app']['Ldap']['LdapPort'] = 636
+default['mattermost']['app']['Ldap']['ConnectionSecurity'] = ""
+default['mattermost']['app']['Ldap']['BaseDN'] = ""
+default['mattermost']['app']['Ldap']['BindUsername'] = ""
+default['mattermost']['app']['Ldap']['BindPassword'] = ""
+default['mattermost']['app']['Ldap']['UserFilter'] = ""
+default['mattermost']['app']['Ldap']['FirstNameAttribute'] = ""
+default['mattermost']['app']['Ldap']['LastNameAttribute'] = ""
+default['mattermost']['app']['Ldap']['EmailAttribute'] = ""
+default['mattermost']['app']['Ldap']['UsernameAttribute'] = ""
+default['mattermost']['app']['Ldap']['NicknameAttribute'] = ""
+default['mattermost']['app']['Ldap']['IdAttribute'] = ""
 default['mattermost']['app']['Ldap']['SkipCertificateVerification'] = false
-default['mattermost']['app']['Ldap']['QueryTimeout'] = false
-default['mattermost']['app']['Ldap']['LoginFieldName'] = false
+default['mattermost']['app']['Ldap']['QueryTimeout'] = 120
+default['mattermost']['app']['Ldap']['LoginFieldName'] = ""
 
 # ComplianceSettings
 default['mattermost']['app']['Compliance']['Enable'] = false
