@@ -1,5 +1,5 @@
-default['mattermost']['package']['url'] = "https://releases.mattermost.com/2.2.0/mattermost-team-2.2.0-linux-amd64.tar.gz"
-default['mattermost']['package']['checksum'] = "d723fe9bf18d2d2a419a8d2aa6ad94fc99f251f8382c4342f08a48813501ca06"
+default['mattermost']['package']['url'] = "https://releases.mattermost.com/3.0.0/mattermost-team-3.0.0-linux-amd64.tar.gz"
+default['mattermost']['package']['checksum'] = "6b3a4a0b5395ad6ef49b6717eb9d1d3049a9425ba2e7297f00da4ace0cc06c8d"
 default['mattermost']['config']['install_path'] = "/opt" # installs to /opt/mattermost
 default['mattermost']['config']['user'] = "mattermost"
 default['mattermost']['config']['group'] = "mattermost"
